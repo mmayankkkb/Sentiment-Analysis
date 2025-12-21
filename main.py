@@ -31,8 +31,8 @@ def get_mood(input_text: str) -> Mood:
     subjects.append(TextBlob(input_text).sentiment.subjectivity)
     sents.append(TextBlob(input_text).sentiment.polarity)
 
-    sentiment: float = np.median(sents)
-    subjectivity: float =np.median(subjects)
+    sentiment: float = np.mean(sents)
+    subjectivity: float =np.mean(subjects)
     reply=""
  
 
@@ -83,6 +83,7 @@ def get_bot_response():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
 
